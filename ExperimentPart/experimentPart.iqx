@@ -1,0 +1,470 @@
+﻿<expt>
+/ subjects = (1 of 1)
+/ blocks = [1-7=sequence(instructions,AesthetikTest,Aesthetik1,VertrauenTest,Vertrauen1,FamiliaritaetTest,Familiaritaet1,demographics,End)]
+</expt>
+
+
+<block AesthetikTest>
+/ onblockbegin = [trial.ScreensAesthetikTest.insertstimulustime(picture.Maskierungsreiz, 0)]
+/ onblockbegin = [trial.ScreensAesthetikTest.insertstimulustime(picture.FixKreuz, 500)]
+/ onblockbegin = [trial.ScreensAesthetikTest.insertstimulustime(picture.AesthetikBilderTest, 1000)]
+/ trials = [1-2=ScreensAesthetikTest]
+/ preinstructions = (introAesthetikTest)
+</block>
+
+<block VertrauenTest>
+/ onblockbegin = [trial.ScreensVertrauenTest.insertstimulustime(picture.VertrauenBilderTest, 500)]
+/ trials = [1-10=ScreensVertrauenTest]
+/ preinstructions = (introVertrauenTest)
+</block>
+
+<block FamiliaritaetTest>
+/ onblockbegin = [trial.ScreensFamiliaritaetTest.insertstimulustime(picture.FamiliaritaetBilderTest, 500)]
+/ trials = [1-10=ScreensFamiliaritaetTest]
+/ preinstructions = (introFamiliaritaetTest)
+</block>
+
+<block Aesthetik1>
+/ onblockbegin = [trial.ScreensAesthetik1.insertstimulustime(picture.AesthetikBilder, 500)]
+/ trials = [1-10=ScreensAesthetik1]
+/ preinstructions = (introAesthetik)
+</block>
+
+<block Vertrauen1>
+/ onblockbegin = [trial.ScreensVertrauen1.insertstimulustime(picture.VertrauenBilder, 500)]
+/ trials = [1-10=ScreensVertrauen1]
+/ preinstructions = (introVertrauen)
+</block>
+
+<block Familiaritaet1>
+/ onblockbegin = [trial.ScreensFamiliaritaet1.insertstimulustime(picture.FamiliaritaetBilder, 500)]
+/ trials = [1-10=ScreensFamiliaritaet1]
+/ preinstructions = (introFamiliaritaet)
+</block>
+
+<block End>
+/ postinstructions = (end)
+</block>
+
+
+<trial ScreensAesthetikTest>
+/ ontrialbegin = [values.ScreenNumber = counter.ScreenNumberAesthetikTest.selectedvalue]
+/ trialduration = 1500
+/ branch = [likert.Rating]
+</trial>
+
+<trial ScreensVertrauenTest>
+/ stimulustimes = [0=text.Fixation]
+/ ontrialbegin = [values.ScreenNumber = counter.ScreenNumberVertrauenTest.selectedvalue]
+/ trialduration = 1000
+/ branch = [likert.Rating]
+</trial>
+
+<trial ScreensFamiliaritaetTest>
+/ stimulustimes = [0=text.Fixation]
+/ ontrialbegin = [values.ScreenNumber = counter.ScreenNumberFamiliaritaetTest.selectedvalue]
+/ trialduration = 1000
+/ branch = [likert.Rating]
+</trial>
+
+
+<trial ScreensAesthetik1>
+/ stimulustimes = [0=text.Fixation]
+/ ontrialbegin = [values.ScreenNumber = counter.ScreenNumberAesthetik1.selectedvalue]
+/ trialduration = 1000
+/ branch = [likert.Rating]
+</trial>
+
+<trial ScreensVertrauen1>
+/ stimulustimes = [0=text.Fixation]
+/ ontrialbegin = [values.ScreenNumber = counter.ScreenNumberVertrauen1.selectedvalue]
+/ trialduration = 1000
+/ branch = [likert.Rating]
+</trial>
+
+<trial ScreensFamiliaritaet1>
+/ stimulustimes = [0=text.Fixation]
+/ ontrialbegin = [values.ScreenNumber = counter.ScreenNumberFamiliaritaet1.selectedvalue]
+/ trialduration = 1000
+/ branch = [likert.Rating]
+</trial>
+
+
+<counter ScreenNumberAesthetikTest>
+/ items = (1,2)
+/ select = sequence
+</counter>
+
+<counter ScreenNumberVertrauenTest>
+/ items = (1,2)
+/ select = sequence
+</counter>
+
+<counter ScreenNumberFamiliaritaetTest>
+/ items = (1,2)
+/ select = sequence
+</counter>
+
+<counter ScreenNumberAesthetik1>
+/ items = (1,2,3,4,5,6,7,8,9,10)
+/ select = sequence
+</counter>
+
+<counter ScreenNumberVertrauen1>
+/ items = (1,2,3,4,5,6,7,8,9,10)
+/ select = sequence
+</counter>
+
+<counter ScreenNumberFamiliaritaet1>
+/ items = (1,2,3,4,5,6,7,8,9,10)
+/ select = sequence
+</counter>
+
+
+<picture FixKreuz>
+/ items = item.FixKreuz
+/ select = values.ScreenNumber
+</picture>
+
+<picture Maskierungsreiz>
+/ items = item.Maskierungsreiz
+/ select = values.ScreenNumber
+</picture>
+
+<picture AesthetikBilderTest>
+/ items = item.AesthetikBilderTest
+/ select = values.ScreenNumber
+</picture>
+
+<picture VertrauenBilderTest>
+/ items = item.VertrauenBilderTest
+/ select = values.ScreenNumber
+</picture>
+
+<picture FamiliaritaetBilderTest>
+/ items = item.FamiliaritaetBilderTest
+/ select = values.ScreenNumber
+</picture>
+
+<picture AesthetikBilder>
+/ items = item.AesthetikBilder
+/ select = values.ScreenNumber
+</picture>
+
+<picture VertrauenBilder>
+/ items = item.VertrauenBilder
+/ select = values.ScreenNumber
+</picture>
+
+<picture FamiliaritaetBilder>
+/ items = item.FamiliaritaetBilder
+/ select = values.ScreenNumber
+</picture>
+
+<item FixKreuz>
+/ 1 = "FixKreuz.png"
+/ 2 = "FixKreuz.png"
+</item>
+
+<item Maskierungsreiz>
+/ 1 = "Maskierungsreiz.png"
+/ 2 = "Maskierungsreiz.png"
+</item>
+
+
+<item AesthetikBilderTest>
+/ 1 = "AesthetikTest1.png"
+/ 2 = "AesthetikTest2.png"
+</item>
+
+<item VertrauenBilderTest>
+/ 1 = "VertrauenTest1.png"
+/ 2 = "VertrauenTest2.png"
+</item>
+
+<item FamiliaritaetBilderTest>
+/ 1 = "FamiliaritaetTest1.png"
+/ 2 = "FamiliaritaetTest2.png"
+</item>
+
+<item AesthetikBilder>
+/ 1 = "Aesthetik1.png"
+/ 2 = "Aesthetik2.png"
+/ 3 = "Aesthetik3.png"
+/ 4 = "Aesthetik4.png"
+/ 5 = "Aesthetik5.png"
+/ 6 = "Aesthetik6.png"
+/ 7 = "Aesthetik7.png"
+/ 8 = "Aesthetik8.png"
+/ 9 = "Aesthetik9.png"
+/ 10 = "Aesthetik10.png"
+</item>
+
+<item VertrauenBilder>
+/ 1 = "Vertrauen1.png"
+/ 2 = "Vertrauen2.png"
+/ 3 = "Vertrauen3.png"
+/ 4 = "Vertrauen4.png"
+/ 5 = "Vertrauen5.png"
+/ 6 = "Vertrauen6.png"
+/ 7 = "Vertrauen7.png"
+/ 8 = "Vertrauen8.png"
+/ 9 = "Vertrauen9.png"
+/ 10 = "Vertrauen10.png"
+</item>
+
+<item FamiliaritaetBilder>
+/ 1 = "Familiaritaet1.png"
+/ 2 = "Familiaritaet2.png"
+/ 3 = "Familiaritaet3.png"
+/ 4 = "Familiaritaet4.png"
+/ 5 = "Familiaritaet5.png"
+/ 6 = "Familiaritaet6.png"
+/ 7 = "Familiaritaet7.png"
+/ 8 = "Familiaritaet8.png"
+/ 9 = "Familiaritaet9.png"
+/ 10 = "Familiaritaet10.png"
+</item>
+
+<likert Rating>
+/ ontrialbegin = [if (
+script.currentblock == "Vertrauen1" ||
+script.currentblock == "VertrauenTest")
+{likert.Rating.removestimulustime(500); likert.Rating.setstimulustime(text.VertrauenText, 0);  likert.Rating.insertstimulustime(text.LeftAnchor, 0); likert.Rating.insertstimulustime(text.RightAnchor, 0)}
+else if (
+script.currentblock == "Familiaritaet1" ||
+script.currentblock == "FamiliaritaetTest")
+{likert.Rating.removestimulustime(500); likert.Rating.setstimulustime(text.FamiliaritaetText, 0); likert.Rating.insertstimulustime(text.LeftAnchor, 0); likert.Rating.insertstimulustime(text.RightAnchor, 0)}
+else if (
+script.currentblock == "Aesthetik1" ||
+script.currentblock == "AesthetikTest")
+{likert.Rating.removestimulustime(500); likert.Rating.setstimulustime(text.AesthetikText, 0); likert.Rating.insertstimulustime(text.LeftAnchor, 0); likert.Rating.insertstimulustime(text.RightAnchor, 0)}]
+/ showmousecursor = false
+/ mouse = false
+/ numpoints = 7
+/ buttonvalues = [1 = "1", 2 = "2", 3 = "3", 4 = "4", 5 = "5", 6 = "6", 7 = "7"]
+/ position = (50%,50%)
+</likert>
+
+
+<values>
+/ ScreenType = 0
+/ ScreenNumber = 0
+/ LeftAnchor = "Wenig ästhetisch"
+/ RightAnchor = "Sehr ästhetisch"
+</values>
+
+<text AesthetikText>
+/ items = ("Wie ästhetisch ansprechend fanden Sie die letzte Webseite?")
+/ fontstyle = ("Arial", 3%, true)
+/ position = (50%,30%)
+/ size = (90%,15%)
+</text>
+
+<text VertrauenText>
+/ items = ("Wie vertrauenswürdig fanden Sie die letzte Webseite?")
+/ fontstyle = ("Arial", 3%, true)
+/ position = (50%,30%)
+/ size = (90%,15%)
+</text>
+
+<text FamiliaritaetText>
+/ items = ("Wie bekannt kam Ihnen die letzte Webseite vor?")
+/ fontstyle = ("Arial", 3%, true)
+/ position = (50%,30%)
+/ size = (90%,15%)
+</text>
+
+<text Fixation>
+/ items = (".")
+/ fontstyle = ("Arial", 25%, true)
+/ position = (50%,50%)
+</text>
+
+<text LeftAnchor>
+/ items = ("<%values.LeftAnchor%>")
+/ fontstyle = ("Arial", 3%, true)
+/ position = (20%,45%)
+/ size = (90%,10%)
+</text>
+
+<text RightAnchor>
+/ items = ("<%values.RightAnchor%>")
+/ fontstyle = ("Arial", 3%, true)
+/ position = (80%,45%)
+/ size = (90%,10%)
+</text>
+
+
+<survey demographics>
+/ pages = [1=demographicsPage1]
+/ responsefontstyle = ("Arial", -12, false, false, false, false, 5, 0)
+/ itemfontstyle = ("Arial", -13, true, false, false, false, 5, 0)
+/ itemspacing = 2%
+/ showpagenumbers = false
+</survey>
+
+<survey instructions>
+/ pages = [1=instructionsPage1]
+/ responsefontstyle = ("Arial", -12, false, false, false, false, 5, 0)
+/ itemfontstyle = ("Arial", -13, true, false, false, false, 5, 0)
+/ itemspacing = 2%
+/ showpagenumbers = false
+</survey>
+
+<surveypage instructionsPage1>
+/ caption = "Instruktionen Webseiten-Studie"
+/ fontstyle = ("Arial", 3%, true)
+/ subcaption = "
+Herzlich Willkommen zur Studie des Lehrstuhls Psychologische Ergonomie.
+
+Im folgenden Versuch geht es darum, verschiedene Webseiten nach Ihrem persönlichem Empfinden zu bewerten. Es ist dabei sehr wichtig, dass Sie sich auf den Bildschirm konzentrieren und sich nicht ablenken lassen.
+
+Es werden Ihnen verschiedene Webseiten für wenige Sekunden gezeigt. Jeweils im Anschluss wird Ihnen eine Frage mit 10 Stufen zur Bewertung der Webseite gestellt. Nachdem Sie einen Wert abgegeben haben, wird direkt der nächste Screen gezeigt.
+Die Studie ist in 3 Blöcke eingeteilt. Ein Block besteht jeweils aus 2 Testscreens zur Eingewöhnung und 10 Hauptscreens. 
+
+Vor jedem Block und nach den jeweiligen Testscreens haben Sie die Möglichkeit Fragen zu stellen, wenn Ihnen etwas unklar oder unverständlich sein sollte. 
+
+Sie können jederzeit die Studie abbrechen.
+ 
+Wenn Sie die Instruktionen durchgelesen haben, wenden Sie sich bitte an den Versuchsleiter, um mögliche Fragen zu klären und den Versuch zu starten."
+/ subcaptionfontstyle = ("Arial", 3%, false)
+</surveypage>
+<surveypage demographicsPage1>
+/ caption = "Bitte beantworten Sie folgende Fragen."
+/ fontstyle = ("Arial", 3%, true)
+/ questions = [1=sex; 2=age; 3=occupation; 4=language; 5=notgerman; 6=smartphone; 7=pc; 8=webseiten]
+</surveypage>
+
+<radiobuttons sex>
+/caption = "Geschlecht"
+/ options = ("weiblich", "männlich")
+</radiobuttons>
+
+<textbox age>
+/ caption = "Alter"
+/ mask = positiveinteger
+/ range = (7, 110)
+</textbox>
+
+<dropdown occupation>
+/ caption = "Studiengang"
+/ options = ("Medienkommunikation", "Mensch-Computer-Systeme", "Sonstiges")
+</dropdown>
+
+<radiobuttons language>
+/ caption = "Ist Deutsch Ihre Muttersprache?"
+/ options = ("Ja","Nein")
+</radiobuttons>
+
+<textbox notgerman>
+/ caption = "Wenn Nein, seit wie vielen Jahren sprechen Sie Deutsch?"
+/ mask = positiveinteger
+/ required = false
+</textbox>
+
+<radiobuttons smartphone>
+/ caption = "Wie oft benutzen Sie ein Smartphone für das Aufsuchen von Webseiten?"
+/ options = ("1(sehr selten)","2", "3", "4", "5", "6", "7(sehr häufig)")
+/ orientation = horizontal
+</radiobuttons>
+
+<radiobuttons pc>
+/ caption = "Wie oft benutzen Sie einen PC für das Aufsuchen von Webseiten?"
+/ options = ("1(sehr selten)","2", "3", "4", "5", "6", "7(sehr häufig)")
+/ orientation = horizontal
+</radiobuttons>
+
+<radiobuttons webseiten>
+/ caption = "Beschäftigen Sie sich mehr mit Webseiten über die Nutzung hinaus? (z.B. Design Blogs, etc.)"
+/ options = ("Ja","Nein")
+</radiobuttons>
+
+<page introAesthetikTest>
+Im folgenden Block sollen Sie die Ästhetik bewerten.
+
+^^Bei den nächsten zwei Webseiten handelt es sich um Test-Stimuli, damit Sie sich an die Aufgabenstellung gewöhnen können. 
+
+^^Sie werden zuerst ein Fixationskreuz sehen und danach wird eine Webseite immer für 4 Sekunden angezeigt, gefolgt von einem Schwarz-Weiß-Muster. 
+^Im Anschluss bewerten Sie die Webseite anhand einer Skala zu der Frage "Wie ästhetisch ansprechend fanden Sie die letzte Webseite?".
+^Drücken Sie hierzu die entsprechende Zahl auf dem Ziffernblock und bestätigen Sie mit ENTER.
+
+
+^^Bitte beantworten Sie die Fragen schnell und aus dem Bauch heraus. Es gibt keine falschen Antworten. 
+
+^^Wenn Sie noch Fragen an den Versuchsleiter haben, können Sie diese nun stellen, ansonsten klicken Sie die LEERTASTE und der Versuch beginnt.
+</page>
+
+<page introVertrauenTest>
+Im folgenden Block sollen Sie das Vertrauen bewerten.
+
+^^Bei den nächsten zwei Webseiten handelt es sich um Test-Stimuli, damit Sie sich an die Aufgabenstellung gewöhnen können. 
+
+^^Sie werden zuerst ein Fixationskreuz sehen und danach wird eine Webseite immer für 4 Sekunden angezeigt, gefolgt von einem Schwarz-Weiß-Muster. 
+^Im Anschluss bewerten Sie die Webseite anhand einer Skala zu der Frage "Wie vertrauenswürdig fanden Sie die letzte Webseite?".
+
+^^Bitte beantworten Sie die Fragen schnell und aus dem Bauch heraus. Es gibt keine falschen Antworten. 
+
+^^Wenn Sie noch Fragen an den Versuchsleiter haben, können Sie diese nun stellen, ansonsten klicken Sie die LEERTASTE und der Versuch beginnt.
+</page>
+
+<page introFamiliaritaetTest>
+Im folgenden Block sollen Sie die Familiarität bewerten.
+
+^^Bei den nächsten zwei Webseiten handelt es sich um Test-Stimuli, damit Sie sich an die Aufgabenstellung gewöhnen können. 
+
+^^Sie werden zuerst ein Fixationskreuz sehen und danach wird eine Webseite immer für 4 Sekunden angezeigt, gefolgt von einem Schwarz-Weiß-Muster. 
+^Im Anschluss bewerten Sie die Webseite anhand einer Skala zu der Frage "Wie bekannt kam Ihnen die letzte Webseite vor?".
+
+^^Bitte beantworten Sie die Fragen schnell und aus dem Bauch heraus. Es gibt keine falschen Antworten. 
+
+^^Wenn Sie noch Fragen an den Versuchsleiter haben, können Sie diese nun stellen, ansonsten klicken Sie auf “weiter” und der Versuch beginnt.
+</page>
+
+<page introAesthetik>
+Nun beginnt der Hauptversuch zur Ästhetik, wobei Sie diesmal 10 Webseiten bewerten sollen. Der Ablauf ist derselbe wie bei den Test-Webseiten.
+ 
+^^Bitte beantworten Sie die Fragen weiterhin schnell und aus dem bauch heraus. Es gibt keine falschen Antworten. 
+ 
+^^Wenn Sie noch Fragen an den Versuchsleiter haben, können Sie diese nun stellen, ansonsten klicken Sie die LEERTASTE und der Versuch beginnt.
+</page>
+
+<page introVertrauen>
+Nun beginnt der Hauptversuch zu Vertrauen, wobei Sie diesmal 10 Webseiten bewerten sollen. Der Ablauf ist derselbe wie bei den Test-Webseiten.
+ 
+^^Bitte beantworten Sie die Fragen weiterhin schnell und aus dem Bauch heraus. Es gibt keine falschen Antworten. 
+ 
+^^Wenn Sie noch Fragen an den Versuchsleiter haben, können Sie diese nun stellen, ansonsten klicken Sie die LEERTASTE und der Versuch beginnt.
+</page>
+
+<page introFamiliaritaet>
+Nun beginnt der Hauptversuch zu Familiarität, wobei Sie diesmal 10 Webseiten bewerten sollen. Der Ablauf ist derselbe wie bei den Test-Webseiten.
+ 
+^^Bitte beantworten Sie die Fragen weiterhin schnell und aus dem Bauch heraus. Es gibt keine falschen Antworten. 
+ 
+^^Wenn Sie noch Fragen an den Versuchsleiter haben, können Sie diese nun stellen, ansonsten klicken Sie die LEERTASTE und der Versuch beginnt.
+</page>
+
+<page end>
+Die Studie ist hiermit beendet.
+
+^^Vielen Dank für Ihre Teilnahme!
+
+Bitte wenden Sie sich an den Versuchsleiter und 
+^^drücken Sie ab jetzt KEINE WEITEREN TASTEN.
+</page>
+
+<defaults >
+/ fontstyle = ("Arial", 2.5%, false, false, false, false, 5, 1)
+/ screencolor = (255,255,255)
+/ txcolor = (0,0,0)
+/ txbgcolor = (255,255,255)
+</defaults>
+
+<instruct >
+/ lastlabel = "Weiter mit der LEERTASTE"
+/ nextlabel = "Weiter mit der LEERTASTE"
+/ nextkey = (" ")
+/ windowsize = (80%,80%)
+/ fontstyle = ("Arial", 2.5%, false, false, false, false, 5, 1)
+</instruct>
